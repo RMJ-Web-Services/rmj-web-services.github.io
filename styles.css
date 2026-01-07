@@ -1,0 +1,82 @@
+@font-face {
+    font-family: inter;
+    src:
+        url("/fonts/Inter.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: roboto;
+    src:
+        local("Roboto"),
+        url("/fonts/Roboto.ttf") format("TrueType");
+    font-display: swap;
+}
+
+html {
+    font-size: 100%;
+    color: black;
+    font-family: roboto;
+}
+
+body {
+    background-color: white;
+    padding-top: 10vh;
+}
+
+#topSlider {
+    display: flex;
+    justify-content: center;
+}
+#topSlider > * {
+    width: 40%;
+}
+
+#topLeft {
+    font-size: 2em;
+    position: relative;
+    right: 0;
+}
+#topLeft > * {
+    margin: 0;
+}
+#topLeft > h2 {
+    margin-left: 0.6em;
+    opacity: 0.6;
+}
+
+#topRight {
+    /* magické číslo final boss */
+    perspective: 900px;
+    aspect-ratio: 1;
+}
+#frameParent {
+    transform: rotate3d(1, -1, 0.5, 35deg);
+    position: relative;
+    top: -20%;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#frameParent:hover > #frameTimer {
+    opacity: 0;
+}
+#frameTimer {
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+    background: linear-gradient(90deg, #50aaff 50%, #00000000 50%);
+    background-size: 200%;
+}
+#frameParent > iframe {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+}
