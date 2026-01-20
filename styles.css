@@ -1,143 +1,141 @@
 @font-face {
-    font-family: inter;
-    src:
-        url("/fonts/Inter.ttf") format("truetype");
-    font-display: swap;
+  font-family: inter;
+  src: url("/fonts/Inter.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: roboto;
-    src:
-        local("Roboto"),
-        url("/fonts/Roboto.ttf") format("TrueType");
-    font-display: swap;
+  font-family: roboto;
+  src:
+    local("Roboto"),
+    url("/fonts/Roboto.ttf") format("TrueType");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: bebas neue;
-    src:
-        local("Bebas Neue"),
-        url("/fonts/BebasNeue-Regular.ttf") format("TrueType");
-    font-display: swap;
+  font-family: bebas neue;
+  src:
+    local("Bebas Neue"),
+    url("/fonts/BebasNeue-Regular.ttf") format("TrueType");
+  font-display: swap;
 }
-
 
 :root {
-    --blue: #50aaff;
-    --border-round: 20px;
+  --blue: #50aaff;
+  --border-round: 20px;
 }
 
 html {
-    font-size: 100%;
-    color: black;
-    font-family: Calibri;
+  font-size: 100%;
+  color: black;
+  font-family: Calibri;
 }
 
 h1 {
-    font-family: bebas neue, Calibri;
+  font-family: bebas neue, Calibri;
 }
 
 body {
-    background-color: white;
-    padding-top: 10vh;
+  background-color: white;
+  padding-top: 10vh;
 }
 
 #topSlider {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 #topSlider > * {
-    width: 40%;
+  width: 40%;
 }
 
 #topLeft {
-    padding-top: 4em;
-    font-size: 2em;
-    position: relative;
-    right: 0;
+  padding-top: 4em;
+  font-size: 2em;
+  position: relative;
+  right: 0;
 }
 #topLeft > * {
-    margin: 0;
+  margin: 0;
 }
 #topLeft > h2 {
-    margin-left: 0.6em;
-    opacity: 0.6;
+  margin-left: 0.6em;
+  opacity: 0.6;
 }
 
 #topRight {
-    /* magické číslo final boss */
-    perspective: 900px;
-    aspect-ratio: 1;
+  /* magické číslo final boss */
+  perspective: 900px;
+  aspect-ratio: 1;
 }
 #frameParent {
-    transform: rotate3d(1, -1, 0.5, 35deg);
-    position: relative;
-    top: -20%;
-    height: 100%;
-    width: 100%;
-    border-radius: var(--border-round);
-    overflow: hidden;
+  transform: rotate3d(1, -1, 0.5, 35deg);
+  position: relative;
+  top: -20%;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--border-round);
+  overflow: hidden;
 }
 #frameParent:hover > #frameTimer {
-    opacity: 0;
+  opacity: 0;
 }
 #frameTimer {
-    width: calc(100% + 2px);
-    height: 6px;
-    position: absolute;
-    bottom: -1px;
-    left: -1px;
-    z-index: 1;
-    opacity: 1;
-    transition: opacity 0.3s ease-out;
-    background: linear-gradient(90deg, var(--blue) 50%, #00000000 50%);
-    background-size: 200%;
+  width: calc(100% + 2px);
+  height: 6px;
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+  background: linear-gradient(90deg, var(--blue) 50%, #00000000 50%);
+  background-size: 200%;
 }
 #frameParent > iframe {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: none;
 }
 
 #whatWeOffer {
-    font-size: 3rem;
-    padding-left: 10%;
+  font-size: 3rem;
+  padding-left: 10%;
 }
 
 #cardHolder {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5em;
-    padding: 0 5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5em;
+  padding: 0 5em;
 }
 
 #cardHolder > .card {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1;
-    padding: var(--border-round);
-    border: 2px solid var(--blue);
-    border-radius: var(--border-round);
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: var(--border-round);
+  border: 2px solid var(--blue);
+  border-radius: var(--border-round);
+  overflow: hidden;
 }
 #cardHolder > .card::after {
-    content: "";
-    height: 4px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    transition: width 0.5s ease-out;
-    background: var(--blue);
+  content: "";
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  transition: width 0.5s ease-out;
+  background: var(--blue);
 }
 #cardHolder > .card:hover::after {
-    width: 100%;
+  width: 100%;
 }
 #cardHolder > .card > div {
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: 2em;
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 2em;
 }
 
 /*
@@ -145,5 +143,5 @@ debug
 frontend je má vášeň
 */
 #scroll {
-    height: 3000px;
+  height: 3000px;
 }
