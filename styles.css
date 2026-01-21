@@ -57,6 +57,27 @@ body {
 #topLeft > * {
   margin: 0;
 }
+#topLeft > h1 {
+    position: relative;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 15px white;
+}
+#topLeft > h1::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -40px;
+    height: 80px;
+    aspect-ratio: 1;
+    z-index: -1;
+    background: url("/assets/cog.svg") no-repeat center;
+    background-size: cover;
+    animation: spin 10s infinite linear;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
 #topLeft > h2 {
   margin-left: 0.6em;
   opacity: 0.6;
