@@ -34,6 +34,8 @@
 }
 
 html {
+  margin: 0;
+  padding: 0;
   font-size: 100%;
   color: black;
   font-family: inter;
@@ -44,6 +46,7 @@ h1 {
 }
 
 body {
+  margin: 0;
   background-color: white;
   padding-top: 10vh;
 }
@@ -211,6 +214,103 @@ body {
   }
 }
 
+.product-pricing {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.product {
+  margin: 10px;
+  padding: 10px;
+}
+.even {
+  background-color: #ececec;
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    width: 260px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.product-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #000;
+    align-items: center;
+}
+.product-card-body {
+    margin: 10px;
+    height:auto;
+    font-size: 1.2em;
+    color: black;
+}
+.product-card-price {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0202d2;
+}
+.product-card-body ul {
+    list-style-type: none;
+    padding-left: 0;
+    color: black;
+}
+.product-card-body .include::before{
+    content: "✔";
+    color: green;
+    margin-right: 5px;
+}
+.product-card-body .exclude::before{
+    content: "✘";
+    color: red;
+    margin-right: 5px;
+}
+.pricing-header {
+    text-align: center;
+    margin: 20px 0 0 0;
+    gap: 0;
+}
+.pricing-header h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+.pricing-header p {
+    font-size: 1.2em;
+    margin: 5px 0 20px 0;
+    color: #555;
+}
+
+.pricing-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.0em;
+}
+
+.product-description {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.0em;
+    color: #333;
+    margin-top: 10px;
+}
+
+.product-description ul {
+    list-style-type: none;
+    padding-left: 0;
+    color: black;
+}
+
 @media (max-width: 1200px) {
   #card-holder {
     grid-template-columns: repeat(2, 1fr);
@@ -220,6 +320,11 @@ body {
     & > p {
       text-align: left;
     }
+  }
+
+  .product-pricing {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
