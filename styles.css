@@ -22,13 +22,21 @@
 
 :root {
   --blue: #50aaff;
-  --border-round: 20px;
+  --primary-color: #0078d7;
+  --secondary-color: #102e55;
+  --complementary-color: #c54516;
+  --complementary-gradient-start: #e78f0c;
+  --complementary-color-gradient: linear-gradient(40deg, var(--complementary-color) 10%, var(--complementary-gradient-start) 90%);
+  --card-bg: #f3f3f3;
+  --card-text: #666666;
+
+  --border-round: 15px;
 }
 
 html {
   font-size: 100%;
   color: black;
-  font-family: Calibri;
+  font-family: inter;
 }
 
 h1 {
@@ -124,45 +132,119 @@ body {
   padding-left: 10%;
 }
 
-#cardHolder {
+#services {
+  width: 100vw;
+  margin-top: 4rem;
+
+  & > h1 {
+    text-align: center;
+    font-size: 3rem;
+    text-decoration: underline;
+    color: var(--secondary-color);
+  }
+
+  & > * {
+    margin: 0 4rem;
+  }
+
+  & > *:not(:first-child) {
+    margin-top: 4rem;
+  }
+}
+
+#card-holder {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5em;
-  padding: 0 5em;
+  gap: 4rem;
+  align-items: start;
 }
 
-#cardHolder > .card {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1;
-  padding: var(--border-round);
-  border: 2px solid var(--blue);
+.card {
+  box-shadow: 10px 10px 25px #00000022;
   border-radius: var(--border-round);
   overflow: hidden;
-}
-#cardHolder > .card::after {
-  content: "";
-  height: 4px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  transition: width 0.5s ease-out;
-  background: var(--blue);
-}
-#cardHolder > .card:hover::after {
-  width: 100%;
-}
-#cardHolder > .card > div {
-  position: absolute;
-  bottom: 0px;
-  margin-bottom: 2em;
+
+  & > div {
+    padding: 1.5rem;
+  }
+
+  & > hr {
+    border: none;
+    border-top: 2px solid var(--secondary-color);
+    margin: 0;
+  }
+
+  & h2 {
+    font-family: bebas neue, Calibri;
+    font-size: 2rem;
+    color: var(--secondary-color); 
+    margin: 0;
+    text-align: center;
+  }
 }
 
-/*
-debug
-frontend je má vášeň
-*/
+.card-header {
+  background-color: var(--card-bg);
+} 
+
+.card-body {
+  /* background-color: var(--card-bg); */
+}
+
+.card-body {
+  & > p, & > h3, & > a {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  & > p {
+    color: var(--card-text);
+    text-align: justify;
+  }
+
+  & > h3 {
+    color: var(--secondary-color);
+  }
+
+  & > *:not(:first-child) {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  #card-holder {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-body {
+    & > p {
+      text-align: left;
+    }
+  }
+}
+
+.learn-more-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+a.learn-more {
+  text-decoration: none;
+  background: var(--complementary-color-gradient);
+  padding: 1rem;
+  border-radius: var(--border-round);
+
+  & > span {
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+
+    &::after {
+      content: " ↗";
+    }
+  }
+}
+
 #scroll {
   height: 3000px;
 }
