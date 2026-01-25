@@ -39,6 +39,7 @@ html {
   font-size: 100%;
   color: black;
   font-family: inter;
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -180,7 +181,7 @@ body {
   & h2 {
     font-family: bebas neue, Calibri;
     font-size: 2rem;
-    color: var(--secondary-color); 
+    color: var(--secondary-color);
     margin: 0;
     text-align: center;
   }
@@ -188,7 +189,7 @@ body {
 
 .card-header {
   background-color: var(--card-bg);
-} 
+}
 
 .card-body {
   /* background-color: var(--card-bg); */
@@ -323,8 +324,8 @@ body {
   }
 
   .product-pricing {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
