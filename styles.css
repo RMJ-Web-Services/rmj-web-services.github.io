@@ -130,6 +130,21 @@ body {
   overflow: hidden;
   display: none;
 }
+#frameLeftArrow, #frameRightArrow {
+    position: absolute;
+    bottom: 4px;
+    border: 20px solid transparent;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+#frameLeftArrow {
+    left: -16px;
+    border-right: 25px solid var(--blue) !important;
+}
+#frameRightArrow {
+    right: -16px;
+    border-left: 25px solid var(--blue) !important;
+}
 
 #whatWeOffer {
   font-size: 3rem;

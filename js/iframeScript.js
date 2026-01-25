@@ -34,11 +34,20 @@ function circleFrameForwardInterval() {
   circleFrameForward();
 }
 
+document.getElementById("frameLeftArrow").addEventListener("click", circleFrameBackward);
+document.getElementById("frameRightArrow").addEventListener("click", circleFrameForward);
 function circleFrameForward() {
   index++;
   frames[index % frames.length].style.display = "block";
   try {
     frames[(index - 1) % frames.length].style.display = "none";
+  } catch { /* give up */ }
+}
+function circleFrameBackward() {
+  index += sources.length - 1;
+  frames[index % frames.length].style.display = "block";
+  try {
+    frames[(index + 1) % frames.length].style.display = "none";
   } catch { /* give up */ }
 }
 function animateTimer() {
