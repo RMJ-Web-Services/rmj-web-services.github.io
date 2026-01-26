@@ -22,15 +22,41 @@
 
 :root {
   --blue: #50aaff;
+  --bg-color: #ffffff;
   --primary-color: #0078d7;
   --secondary-color: #102e55;
   --complementary-color: #c54516;
   --complementary-gradient-start: #e78f0c;
   --complementary-color-gradient: linear-gradient(40deg, var(--complementary-color) 10%, var(--complementary-gradient-start) 90%);
   --card-bg: #f3f3f3;
-  --card-text: #666666;
+  --text-muted: #666666;
+  --shadow-color: #00000022;
 
   --border-round: 15px;
+  --services-margin: 4rem;
+  --card-columns: repeat(3, 1fr);
+
+  @media (prefers-color-scheme: dark) {
+    --bg-color: #222233;
+    --secondary-color: var(--blue);
+    --card-bg: #333344;
+    --text-muted: #aaaaaa;
+    --shadow-color: #aaaaaa22;
+
+    #topLeft > h1::before {
+        filter: invert(1);
+    }
+  }
+
+  @media (max-width: 1200px) {
+    --services-margin: 3rem;
+    --card-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 700px) {
+    --services-margin: 2rem;
+    --card-columns: repeat(1, 1fr);
+  }
 }
 
 html {
@@ -43,8 +69,12 @@ h1 {
   font-family: bebas neue, Calibri;
 }
 
+h2 {
+  color: var(--text-muted)
+}
+
 body {
-  background-color: white;
+  background-color: var(--bg-color);
   padding-top: 10vh;
 }
 
@@ -66,9 +96,10 @@ body {
   margin: 0;
 }
 #topLeft > h1 {
-    position: relative;
-    paint-order: stroke fill;
-    -webkit-text-stroke: 15px white;
+  color: var(--secondary-color);
+  position: relative;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 15px var(--bg-color);
 }
 #topLeft > h1::before {
     content: "";
@@ -133,7 +164,7 @@ body {
 }
 
 #services {
-  width: 100vw;
+  width: 100%;
   margin-top: 4rem;
 
   & > h1 {
@@ -144,23 +175,23 @@ body {
   }
 
   & > * {
-    margin: 0 4rem;
+    margin: 0 var(--services-margin);
   }
 
   & > *:not(:first-child) {
-    margin-top: 4rem;
+    margin-top: var(--services-margin);
   }
 }
 
 #card-holder {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
+  grid-template-columns: var(--card-columns);
+  gap: var(--services-margin);
   align-items: start;
 }
 
 .card {
-  box-shadow: 10px 10px 25px #00000022;
+  box-shadow: 10px 10px 25px var(--shadow-color);
   border-radius: var(--border-round);
   overflow: hidden;
 
@@ -188,17 +219,13 @@ body {
 } 
 
 .card-body {
-  /* background-color: var(--card-bg); */
-}
-
-.card-body {
   & > p, & > h3, & > a {
     font-size: 1.1rem;
     margin: 0;
   }
 
   & > p {
-    color: var(--card-text);
+    color: var(--text-muted);
     text-align: justify;
   }
 
@@ -212,10 +239,6 @@ body {
 }
 
 @media (max-width: 1200px) {
-  #card-holder {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .card-body {
     & > p {
       text-align: left;
