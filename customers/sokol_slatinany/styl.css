@@ -119,6 +119,10 @@ body {
     width: 50vw;
 }
 
+.centerPanel img {
+    max-width: 100%;
+}
+
 .centerPanel h3 {
     margin-bottom: 10px;
     color: #404629;
@@ -150,7 +154,7 @@ a:hover {
 
 #sokolMainFoto {
     margin-left: -25px; 
-    width: calc(100% + 50px);
+    max-width: calc(100% + 50px);
 }
 
 @media (max-width: 900px) {
