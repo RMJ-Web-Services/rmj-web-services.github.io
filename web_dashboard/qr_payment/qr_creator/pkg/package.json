@@ -1,0 +1,15 @@
+{
+  "name": "qr_creator",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "qr_creator_bg.wasm",
+    "qr_creator.js",
+    "qr_creator.d.ts"
+  ],
+  "main": "qr_creator.js",
+  "types": "qr_creator.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

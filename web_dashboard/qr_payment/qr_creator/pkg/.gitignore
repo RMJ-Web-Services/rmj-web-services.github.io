@@ -1,0 +1,5 @@
+# Rust build output
+qr_creator\target
+
+# IDE / editor files
+.vscode/

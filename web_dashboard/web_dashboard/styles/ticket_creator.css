@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #1e1e1e;
+  color: white;
+}
+
+#toolbar {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: #2b2b2b;
+}
+
+#canvas {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background: #111;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+/* Image */
+#image {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Number box */
+#number-box {
+  position: absolute;
+  display: none;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  cursor: move;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  line-height: 1;
+  white-space: nowrap;
+}

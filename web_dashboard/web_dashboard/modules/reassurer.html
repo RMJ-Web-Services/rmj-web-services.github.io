@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Yeller</title>
+<link rel="stylesheet" href="../styles/reassurer.css">
+</head>
+<body>
+
+<div id="yeller-root"></div>
+<script src="../scripts/reassurer.js"></script>
+<script>
+  showYeller({
+  reassure_text: "Are you sure you want to delete this item?",
+  onResponse: (value) => console.log("User response:", value)
+});
+</script>
+
+</body>
+</html>

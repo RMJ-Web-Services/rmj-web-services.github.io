@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Seating Arrangement</title>
+      <link rel="stylesheet" href="../styles/seating.css">
+  </head>
+  <body>
+    <!--<h1>Seating Arrangement</h1>-->
+    <div class="app">
+      <div class="card">  
+        <div id="room"></div>
+
+        <div class="controls">
+          <div class="slider-group">
+            <span class="slider-label">Seats</span>
+            <input type="range" id="amount" min="1" max="8" value="1">
+            <div class="range-display">
+              <span id="amount-current">1</span>/<span id="amount-max">8</span>
+            </div>
+          </div>
+          <button id="confirm">Objednat</button>
+        </div>
+      </div>
+
+        <!-- Shopping Cart Panel -->
+      <div class="cart-card">
+        <h2>Selected Tables</h2>
+        <ul id="cart-list">
+          <!-- Selected tables will appear here dynamically -->
+        </ul>
+        <div class="email-input-card">
+          <h2>Your email:</h2>
+          <input id="email-input" type="email" placeholder="your@email.com">
+          <h2>Email verification:</h2>
+          <input id="email-verification" type="ver_email" placeholder="your@email.com">
+        </div>
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cart-total">0.00 Kč</strong>
+        </div>
+      </div>
+
+      
+    </div>
+    <!-- Notification Card -->
+    <div id="notification-card" class="notification-card hidden">
+      <div class="notification-header">
+        <span id="notification-title">Success</span>
+        <button id="notification-close">&times;</button>
+      </div>
+
+      <div id="notification-message" class="notification-message">
+        Your order ID: <strong>12345</strong>
+      </div>
+
+      <button id="pay">Pay</button>
+    </div>
+    <script type="module" src="../scripts/seating.js" defer></script>
+
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>MailChanger</title>
+<link rel="stylesheet" href="../styles/mail_changer.css">
+</head>
+<body>
+<div id="mail-root" class="mail-root"></div>
+<script src="../scripts/mail_changer.js"></script>
+
+<script>
+showMailChanger({
+  initialEmail: "user@example.com",
+  onConfirm: (email) => console.log("Confirmed:", email),
+  onCancel: () => console.log("Canceled")
+});
+</script>
+
+</body>
+</html>
