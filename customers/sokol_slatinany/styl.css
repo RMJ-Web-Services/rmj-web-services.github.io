@@ -6,7 +6,9 @@
     font-family: Arial, sans-serif;
 }
 
-p, a, td {
+p,
+a,
+td {
     overflow-wrap: break-word;
     word-break: break-word;
 }
@@ -22,7 +24,7 @@ body {
     display: flex;
     height: 7vh;
     width: 100%;
-    position:fixed;
+    position: fixed;
 }
 
 #top #logo {
@@ -153,12 +155,15 @@ a:hover {
 }
 
 #sokolMainFoto {
-    margin-left: -25px; 
+    margin-left: -25px;
     max-width: calc(100% + 50px);
 }
 
-@media (max-width: 900px) {
+#menu_text {
+    display: none;
+}
 
+@media (max-width: 900px) {
     body {
         font-size: 16px;
         line-height: 1.6;
@@ -166,11 +171,6 @@ a:hover {
 
     /* Hide big header */
     #top {
-        display: none;
-    }
-
-    #placeholder {
-        display: none;
     }
 
     /* MAIN */
@@ -184,12 +184,9 @@ a:hover {
     .centerPanel {
         width: 100%;
         padding: 15px;
-        order: 1;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
-        /*! justify-content: center; */
-        /*! align-content: center; */
         align-items: center;
     }
 
@@ -197,7 +194,6 @@ a:hover {
         max-width: calc(100% + 20px);
         margin: -10px -20px -30px -20px;
     }
-
 
     .centerPanel,
     .sidePanel {
@@ -207,7 +203,6 @@ a:hover {
     /* SIDE PANELS */
     .sidePanel {
         width: 100%;
-        order: 2;
     }
 
     /* MENU → MOBILE GRID */
@@ -216,6 +211,30 @@ a:hover {
         grid-template-columns: 1fr 1fr;
         gap: 8px;
         padding: 0;
+        margin-top: 0;
+    }
+
+    .off #menu_text {
+        width: 100%;
+        height: 100%;
+    }
+
+    #menu_text {
+        padding: 15px;
+
+        font-weight: bold;
+        font-size: 1.5rem;
+        display: flex;
+        border-width: 0;
+        background-color: #00000000;
+        justify-content: start;
+        justify-items: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu > *:first-child {
+        grid-column: 1 / -1;
     }
 
     .menu li {
@@ -235,6 +254,23 @@ a:hover {
     .menu a.aktualni {
         background: #882815;
         color: #fff;
+    }
+
+    .off a {
+        display: none;
+        justify-content: center;
+    }
+
+    .off {
+        display: flex;
+        background-color: #f1f1da;
+        border-radius: 15px;
+        border-style: solid;
+        border-color: #882815;
+        border-width: 0px 5px 0 0;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
     }
 
     /* HEADINGS */
@@ -268,5 +304,16 @@ a:hover {
     /* LINKS */
     a {
         word-break: break-word;
+    }
+
+    #top {
+        position: absolute;
+    }
+
+    #logo {
+        display: none;
+    }
+    #top #header img {
+        max-width: 80vw;
     }
 }
