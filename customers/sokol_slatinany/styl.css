@@ -6,6 +6,18 @@
     font-family: Arial, sans-serif;
 }
 
+:root {
+    --color-bg: #fffff3;
+    --color-primary: #882815;
+    --color-panel: #f1f1da;
+    --color-header: #e4e1c5;
+    --color-text: #2b2b2b;
+    --color-heading: #404629;
+
+    --radius: 8px;
+    --spacing: 1rem;
+}
+
 @font-face {
     font-family: "SokolFugner";
     src: url("./fonts/SokolFugner-Regular.ttf") format("truetype");
@@ -28,7 +40,15 @@ td {
 }
 
 a {
-    font-family: "SokolTyrs";
+    font-family: "SokolTyrs", sans-serif;
+    color: var(--color-heading);
+    text-decoration: none;
+    border-bottom: 1px dotted #888;
+    transition: 0.2s ease;
+}
+
+a:hover {
+    border-bottom: 1px solid var(--color-heading);
 }
 
 /* BODY */
@@ -124,6 +144,7 @@ body {
     text-decoration: none;
     color: #2d2d2d;
     border-radius: 4px;
+    font-size: 1.2rem;
 }
 
 .menu a:hover,
