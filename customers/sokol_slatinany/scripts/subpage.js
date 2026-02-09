@@ -99,7 +99,7 @@ function mapQueryToFile(url) {
     }
   }
 
-  return "uvod.html"; // default page if none found
+  return "index.html"; // default page if none found
 }
 
 function isExternalLink(url) {

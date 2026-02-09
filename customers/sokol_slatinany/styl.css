@@ -6,11 +6,29 @@
     font-family: Arial, sans-serif;
 }
 
+@font-face {
+    font-family: "SokolFugner";
+    src: url("./fonts/SokolFugner-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SokolTyrs";
+    src: url("./fonts/SokolTyrs-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 p,
 a,
 td {
     overflow-wrap: break-word;
     word-break: break-word;
+}
+
+a {
+    font-family: "SokolTyrs";
 }
 
 /* BODY */
