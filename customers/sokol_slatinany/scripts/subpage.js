@@ -18,14 +18,13 @@ const queryToFileMap = {
 };
 
 // When the page first loads, load the content matching the query
-document.addEventListener("DOMContentLoaded", () => {
-  loadContent(location.href);
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadContent(location.href);
 
-  // Optional: update active menu link
   const htmlFile = mapQueryToFile(location.href);
+
   menuLinks.forEach((link) => {
-    // check if the link corresponds to this HTML file
-    if (mapQueryToFile(link.href) === htmlFile) {
+    if (!isExternalLink(link.href) && mapQueryToFile(link.href) === htmlFile) {
       link.classList.add("aktualni");
     } else {
       link.classList.remove("aktualni");
@@ -58,30 +57,31 @@ window.addEventListener("popstate", () => {
 });
 
 // Function to fetch and insert content
-function loadContent(url) {
+async function loadContent(url) {
   const htmlFile = mapQueryToFile(url);
 
-  fetch(htmlFile)
-    .then((res) => res.text())
-    .then((html) => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, "text/html");
+  try {
+    const res = await fetch(htmlFile);
+    const html = await res.text();
 
-      const content = doc.querySelector(".content");
-      if (content) {
-        document.querySelector(".content").innerHTML = content.innerHTML;
-      } else {
-        console.error("No content found in", htmlFile);
-      }
-    })
-    .catch((err) => console.error("Failed to load content:", err));
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+
+    const newContent = doc.querySelector(".content");
+    const currentContent = document.querySelector(".content");
+
+    if (newContent && currentContent) {
+      currentContent.innerHTML = newContent.innerHTML;
+
+      // reveal AFTER content is replaced
+      currentContent.style.visibility = "visible";
+    } else {
+      console.error("No content found in", htmlFile);
+    }
+  } catch (err) {
+    console.error("Failed to load content:", err);
+  }
 }
-
-// Handle browser back/forward navigation
-window.addEventListener("popstate", () => {
-  // Reload the current URL's content
-  loadContent(location.href);
-});
 
 function mapQueryToFile(url) {
   const fullUrl = new URL(url, location.origin);
@@ -100,4 +100,14 @@ function mapQueryToFile(url) {
   }
 
   return "uvod.html"; // default page if none found
+}
+
+function isExternalLink(url) {
+  try {
+    const linkUrl = new URL(url, location.href);
+    return linkUrl.origin !== location.origin;
+  } catch (e) {
+    // If URL parsing fails, treat as external to be safe
+    return true;
+  }
 }

@@ -84,9 +84,10 @@ body {
 .sidePanel h3 {
     color: #e6e6c7;
     background: #882815;
-    padding: 6px;
+    padding: 6px 8px;
     margin-bottom: 10px;
     margin-top: 10px;
+    border-radius: 7px;
 }
 
 /* MENU */
@@ -136,6 +137,10 @@ body {
     line-height: 1.5;
 }
 
+.content {
+    visibility: hidden;
+}
+
 /* LINKS */
 a {
     color: #404629;
@@ -167,14 +172,14 @@ iframe {
     max-width: 100%;
 }
 
+.foot {
+    display: none;
+}
+
 @media (max-width: 900px) {
     body {
         font-size: 16px;
         line-height: 1.6;
-    }
-
-    /* Hide big header */
-    #top {
     }
 
     /* MAIN */
@@ -196,7 +201,7 @@ iframe {
 
     #sokolMainFoto {
         max-width: calc(100% + 20px);
-        margin: -10px -20px -30px -20px;
+        margin: -10px -20px 0px -20px;
     }
 
     .centerPanel,
