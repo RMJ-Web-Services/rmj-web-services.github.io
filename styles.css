@@ -183,6 +183,8 @@ body {
   height: 100%;
   overflow: hidden;
   display: none;
+  margin: 0;
+  border: 0;
 }
 #frameLeftArrow, #frameRightArrow {
     position: absolute;
