@@ -199,6 +199,7 @@ a:hover {
 }
 
 #sokolMainFoto {
+    display: none;
     margin-left: -25px;
     max-width: calc(100% + 50px);
 }
